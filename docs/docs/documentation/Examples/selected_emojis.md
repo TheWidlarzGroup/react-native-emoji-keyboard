@@ -24,8 +24,8 @@ const ExampleComponent = () => {
 
     // Remove or add pressed emoji to the currently selected array
     if (emoji.alreadySelected)
-      setCurrentlySelected((prev) => prev.filter((a) => a !== emoji.name))
-    else setCurrentlySelected((prev) => [...prev, emoji.name])
+      setCurrentlySelectedEmojis((prev) => prev.filter((a) => a !== emoji.name))
+    else setCurrentlySelectedEmojis((prev) => [...prev, emoji.name])
 
   }
 
@@ -34,7 +34,7 @@ const ExampleComponent = () => {
       open={isOpen}
       onClose={handleOnClose}
       onEmojiSelected={handleOnEmojiSelected}
-      selectedEmojis={currentlySelected}
+      selectedEmojis={currentlySelectedEmojis}
     />
   )
 }
