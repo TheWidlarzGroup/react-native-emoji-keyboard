@@ -12,5 +12,6 @@ const ko: CategoryTranslation = {
   symbols: '기호',
   flags: '깃발',
   search: '검색',
+  custom: '관습',
 }
 export default ko

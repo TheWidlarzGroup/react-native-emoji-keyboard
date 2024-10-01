@@ -1,17 +1,17 @@
-import { Results } from 'example/src/components/Results'
 import React from 'react'
 import { EmojiKeyboard, type EmojiType } from 'rn-emoji-keyboard'
+import { Result } from 'example/src/components/Result'
 
 export default function () {
-  const [result, setResult] = React.useState<string>()
+  const [result, setResult] = React.useState<EmojiType>()
 
   const handlePick = (emoji: EmojiType) => {
     console.log(emoji)
-    setResult(emoji.emoji)
+    setResult(emoji)
   }
   return (
     <>
-      <Results label={result} />
+      {result && <Result emoji={result} />}
 
       <EmojiKeyboard onEmojiSelected={handlePick} />
     </>

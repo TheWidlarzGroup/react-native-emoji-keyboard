@@ -2,20 +2,25 @@ import { act, renderHook } from '@testing-library/react-native'
 import { useRecentPicksPersistence } from '../hooks/useRecentPicksPersistence'
 import { useKeyboardStore } from '../store/useKeyboardStore'
 import { delay } from '../utils/delay'
+import type { JsonEmoji } from '../types'
 
 describe('useRecentPickPersistence tests', () => {
-  const testData = [
+  const testData: JsonEmoji[] = [
     {
       emoji: '🥒',
       name: 'cucumber',
-      slug: 'cucumber',
       toneEnabled: false,
       v: '3.0',
     },
     {
       emoji: '🥰',
       name: 'smiling face with hearts',
-      slug: 'smiling_face_with_hearts',
+      toneEnabled: false,
+      v: '11.0',
+    },
+    {
+      uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRycGB9hwwFHCdffHvYDqsD5uGMDdcMuVTjKw&s',
+      name: 'sadkat',
       toneEnabled: false,
       v: '11.0',
     },
@@ -52,12 +57,22 @@ describe('useRecentPickPersistence tests', () => {
     act(() => {
       result.current.setKeyboardState({
         type: 'RECENT_EMOJI_ADD',
+        payload: testData[2]!,
+      })
+    })
+
+    expect(result.current.keyboardState.recentlyUsed).toStrictEqual([testData[2]])
+    expect(onStateChangeMock).toHaveBeenCalledWith([testData[2]])
+
+    act(() => {
+      result.current.setKeyboardState({
+        type: 'RECENT_EMOJI_ADD',
         payload: testData[1]!,
       })
     })
 
-    expect(result.current.keyboardState.recentlyUsed).toStrictEqual([testData[1]])
-    expect(onStateChangeMock).toHaveBeenCalledWith([testData[1]])
+    expect(result.current.keyboardState.recentlyUsed).toStrictEqual([testData[1], testData[2]])
+    expect(onStateChangeMock).toHaveBeenCalledWith([testData[1], testData[2]])
 
     act(() => {
       result.current.setKeyboardState({

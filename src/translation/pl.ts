@@ -12,5 +12,6 @@ const pl: CategoryTranslation = {
   symbols: 'Symbole',
   flags: 'Flagi',
   search: 'Szukaj',
+  custom: 'Niestandardowe',
 }
 export default pl

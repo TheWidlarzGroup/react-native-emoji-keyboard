@@ -12,5 +12,6 @@ const de: CategoryTranslation = {
   symbols: 'Symbole',
   flags: 'Flaggen',
   search: 'Suche',
+  custom: 'Benutzerdefinierte',
 }
 export default de

@@ -1,30 +1,30 @@
 import { Button } from 'example/src/components/Button'
 import React from 'react'
-import { Results } from 'example/src/components/Results'
 import EmojiPicker, { type EmojiType } from 'rn-emoji-keyboard'
 import { DeleteButton } from '../../../src/components/DeleteButton'
+import { Results } from '../../src/components/Results'
 
 export default function () {
-  const [result, setResult] = React.useState<string>()
+  const [results, setResults] = React.useState<EmojiType[]>([])
   const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false)
 
   const handlePick = (emoji: EmojiType) => {
     console.log(emoji)
-    setResult(emoji.emoji)
+    setResults([...results, emoji])
     setIsModalOpen((prev) => !prev)
   }
 
   const deleteLastEmoji = () => {
-    if (result) {
-      let arrayFromString = Array.from(result)
+    if (results?.length) {
+      let arrayFromString = Array.from(results)
       arrayFromString.pop()
-      setResult(arrayFromString.join(''))
+      setResults(arrayFromString)
     }
   }
 
   return (
     <>
-      <Results label={result} />
+      {results?.length && <Results emojis={results} />}
       <Button onPress={() => setIsModalOpen(true)} label="Open" />
 
       <EmojiPicker

@@ -12,5 +12,6 @@ const ja: CategoryTranslation = {
   symbols: '記号',
   flags: '旗',
   search: '検索',
+  custom: 'カスタム',
 }
 export default ja

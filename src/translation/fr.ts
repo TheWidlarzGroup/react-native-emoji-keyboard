@@ -12,5 +12,6 @@ const fr: CategoryTranslation = {
   symbols: 'Symboles',
   flags: 'Drapeaux',
   search: 'Chercher',
+  custom: 'Personnalisées',
 }
 export default fr

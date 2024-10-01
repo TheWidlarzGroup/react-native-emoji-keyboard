@@ -8,6 +8,7 @@ export const CATEGORIES_NAVIGATION = [
   { icon: 'Lightbulb', category: 'objects' },
   { icon: 'Ban', category: 'symbols' },
   { icon: 'Flag', category: 'flags' },
+  { icon: 'Sparkles', category: 'custom' },
   { icon: 'Clock', category: 'recently_used' },
   { icon: 'Search', category: 'search' },
 ] as const
@@ -19,26 +20,44 @@ export const CATEGORIES: readonly CategoryTypes[] = CATEGORIES_NAVIGATION.map(
   ({ category }) => category,
 )
 
-export type JsonEmoji = {
-  emoji: string
+export type JsonEmojiBase = {
   name: string
-  v: string
-  toneEnabled: boolean
   keywords?: string[]
 }
+
+export type UnicodeJsonEmoji = JsonEmojiBase & {
+  emoji: string
+  v: string
+  toneEnabled: boolean
+}
+
+export type UriJsonEmoji = JsonEmojiBase & {
+  uri: string
+}
+
+export type JsonEmoji = UnicodeJsonEmoji | UriJsonEmoji
 
 export type ToneSelectorEmoji = Omit<JsonEmoji, 'toneEnabled'> & {
   index: string
 }
 
-export type EmojiType = {
-  emoji: string
+export type EmojiTypeBase = {
   name: string
   slug: string
-  unicode_version: string
-  toneEnabled: boolean
   alreadySelected?: boolean
 }
+
+export type UnicodeEmojiType = EmojiTypeBase & {
+  emoji: string
+  toneEnabled: boolean
+  unicode_version: string
+}
+
+export type UriEmojiType = EmojiTypeBase & {
+  uri: string
+}
+
+export type EmojiType = UnicodeEmojiType | UriEmojiType
 
 export type CategoryPosition = 'floating' | 'top' | 'bottom'
 

@@ -12,5 +12,6 @@ const no: CategoryTranslation = {
   symbols: 'Symboler',
   flags: 'Flagg',
   search: 'Søk',
+  custom: 'Egendefinerte',
 }
 export default no

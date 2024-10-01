@@ -12,5 +12,6 @@ const np: CategoryTranslation = {
   symbols: 'प्रतीकहरू',
   flags: 'झण्डाहरू',
   search: 'खोज्नुहोस्',
+  custom: 'दस्तूर',
 }
 export default np

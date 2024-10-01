@@ -20,6 +20,10 @@ for (const [key, value] of Object.entries(json)) {
     data: newData,
   })
 }
+newArray.push({
+  title: 'custom',
+  data: [],
+})
 
 fs.writeFile('./src/assets/emojis.json', JSON.stringify(newArray), function (err) {
   if (err) return console.log(err)
