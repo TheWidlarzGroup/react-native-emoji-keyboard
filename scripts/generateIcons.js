@@ -15,19 +15,15 @@ for (const [key, value] of Object.entries(json)) {
         keywords: emojisWithKeywords[emoji.emoji],
       }
     })
-  newArray.push(
-    ...[
-      {
-        title: key.replace(/ & /g, '_').replace(/ /g, '_').toLocaleLowerCase(),
-        data: newData,
-      },
-      {
-        title: 'custom',
-        data: [],
-      },
-    ],
-  )
+  newArray.push({
+    title: key.replace(/ & /g, '_').replace(/ /g, '_').toLocaleLowerCase(),
+    data: newData,
+  })
 }
+newArray.push({
+  title: 'custom',
+  data: [],
+})
 
 fs.writeFile('./src/assets/emojis.json', JSON.stringify(newArray), function (err) {
   if (err) return console.log(err)
