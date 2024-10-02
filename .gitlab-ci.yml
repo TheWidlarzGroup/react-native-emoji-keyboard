@@ -1,0 +1,23 @@
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  tags: [docker-runner]
+  script:
+    - yarn install
+    - yarn generateIcons
+    - yarn test
+  only:
+    - master
+build:
+  stage: build
+  tags: [docker-runner]
+  script:
+    - yarn install
+    - yarn generateIcons
+    - yarn prepack
+    - publish-package
+  only:
+    - master

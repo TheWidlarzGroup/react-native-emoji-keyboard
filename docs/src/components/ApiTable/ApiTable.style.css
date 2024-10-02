@@ -1,0 +1,7 @@
+.ApiTable {
+  width: 100%;
+  display: table;
+}
+.ApiTable_cell {
+  width: 70%;
+}

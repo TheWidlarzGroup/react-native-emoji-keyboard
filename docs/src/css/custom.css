@@ -1,0 +1,79 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #4542dc;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary-warning: #e63946;
+  --ifm-color-primary-black: #1f1e22;
+  --ifm-color-primary-white: #ffffff;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary-warning: #e63946;
+  --ifm-color-primary-black: #1f1e22;
+  --ifm-color-primary-white: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  font-weight: 400;
+  src: local('JetBrainsMono'), url(../../assets/fonts/JetBrainsMono-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'JetBrainsMono';
+  font-weight: 700;
+  src: local('JetBrainsMono'), url(../../assets/fonts/JetBrainsMono-Bold.woff2) format('woff2');
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.gallery img {
+  width: 32%;
+  margin-right: 2%;
+}
+
+.gallery img:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+  }
+  .gallery img {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .gallery img:last-child {
+    margin-right: 0;
+  }
+}
