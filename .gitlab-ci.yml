@@ -1,3 +1,5 @@
+image: mrs1x66x.c1.gra9.container-registry.ovh.net/blg/ci/node
+
 stages:
   - test
   - build
