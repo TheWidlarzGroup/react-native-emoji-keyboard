@@ -1,6 +1,6 @@
 {
-  "name": "rn-emoji-keyboard",
-  "version": "1.7.0",
+  "name": "@blg/fork-rn-emoji-keyboard",
+  "version": "1.7.1",
   "description": "FORK of https://github.com/TheWidlarzGroup/rn-emoji-keyboard",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -35,22 +35,11 @@
     "bootstrap": "yarn example && yarn install",
     "generateIcons": "node ./scripts/generateIcons.js"
   },
-  "keywords": [
-    "react-native",
-    "ios",
-    "android"
-  ],
-  "repository": "https://github.com/TheWidlarzGroup/rn-emoji-keyboard",
-  "author": "Jakub Grzywacz <kontakt@jakubgrzywacz.pl> (https://github.com/jakex7)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TheWidlarzGroup/rn-emoji-keyboard/issues"
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.blgconnect.fr/jslib/fork-rn-emoji-keyboard"
   },
   "homepage": "https://thewidlarzgroup.github.io/rn-emoji-keyboard",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
-  },
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.0.2",
     "@testing-library/react-native": "12.1.2",
@@ -80,7 +69,7 @@
     "react-native": "*"
   },
   "engines": {
-    "node": ">= 16.0.0"
+    "node": ">= 20.0.0"
   },
   "jest": {
     "preset": "react-native",
