@@ -58,7 +58,7 @@ If you want to contribute read the [CONTRIBUTING.md](/CONTRIBUTING.md) guide.
 
 ## 🏢 Built with ♥️ and ⌨️ at TheWidlarzGroup
 
-Built at TheWidlarzGroup - the group of React Native Developers and Designers who has built this project for you.
+Built at [TheWidlarzGroup](https://www.thewidlarzgroup.com/?utm_source=rnemoji&utm_medium=readme) - the group of React Native Developers and Designers who has built this project for you.
 If you like it -> give it a star!
 
 E-mail if you have any questions or just want to talk <hello@thewidlarzgroup.com>

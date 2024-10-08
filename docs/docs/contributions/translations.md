@@ -5,6 +5,8 @@ title: Translations
 
 # Translations
 
+### How to Add Translations
+
 We highly encourage you to add new translations. Please follow the steps below:
 
 - Create language file in `/src/translation/` directory. _For example `en.ts`_
