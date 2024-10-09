@@ -7,6 +7,7 @@ import {
   type EmojisByCategory,
   type EmojiSizes,
   type JsonEmoji,
+  type UnicodeJsonEmoji,
 } from '../types'
 import { SingleEmoji } from './SingleEmoji'
 import { KeyboardContext } from '../contexts/KeyboardContext'
@@ -18,6 +19,7 @@ import { InteractionManager } from 'react-native'
 
 const emptyEmoji: JsonEmoji = {
   emoji: '',
+  uri: '',
   name: 'blank emoji',
   v: '0',
   toneEnabled: false,
@@ -87,7 +89,7 @@ export const EmojiCategory = React.memo(
     )
 
     const handleEmojiLongPress = React.useCallback(
-      (emoji: JsonEmoji, emojiIndex: number, emojiSizes: EmojiSizes) => {
+      (emoji: UnicodeJsonEmoji, emojiIndex: number, emojiSizes: EmojiSizes) => {
         clearEmojiTonesData()
 
         const emojiWithoutTone = {

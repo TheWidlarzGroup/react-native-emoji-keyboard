@@ -12,5 +12,6 @@ const pt: CategoryTranslation = {
   symbols: 'Símbolos',
   flags: 'Bandeiras',
   search: 'Buscar',
+  custom: 'Personalizados',
 }
 export default pt

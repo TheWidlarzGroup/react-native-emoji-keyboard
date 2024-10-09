@@ -12,5 +12,6 @@ const ru: CategoryTranslation = {
   symbols: 'Символы',
   flags: 'Флаги',
   search: 'Поиск емодзи',
+  custom: 'Обычай',
 }
 export default ru

@@ -45,6 +45,8 @@ export const Icon = ({
       return <PngIcon fill={color} source={require('../assets/icons/questionMark.png')} />
     case 'Backspace':
       return <PngIcon fill={color} source={require('../assets/icons/backspace.png')} />
+    case 'Sparkles':
+      return <PngIcon fill={color} source={require('../assets/icons/sparkles.png')} />
     default:
       exhaustiveTypeCheck(iconName)
       return null

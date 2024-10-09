@@ -14,14 +14,24 @@ import { emojisByCategory } from 'rn-emoji-keyboard'
 Here is the EmojisData structure explained as Typescript code
 
 ```ts
-type EmojiType = {
-  emoji: string // Visual representation of emoji
+
+export type EmojiTypeBase = {
   name: string
   slug: string
-  unicode_version: string
-  toneEnabled: boolean
   alreadySelected?: boolean
 }
+
+export type UnicodeEmojiType = EmojiTypeBase & {
+  emoji: string // Visual representation of emoji
+  toneEnabled: boolean
+  unicode_version: string
+}
+
+export type UriEmojiType = EmojiTypeBase & {
+  uri: string // Distant URI / base64 / Image.resolveAssetSource(require('asset/path/emote.ext').uri
+}
+
+export type EmojiType = UnicodeEmojiType | UriEmojiType
 
 type EmojisByCategory = {
   title: CategoryTypes

@@ -12,5 +12,6 @@ const id: CategoryTranslation = {
   symbols: 'Simbol',
   flags: 'Bendera',
   search: 'Cari',
+  custom: 'Khusus',
 }
 export default id

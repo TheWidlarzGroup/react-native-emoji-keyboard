@@ -12,5 +12,6 @@ const tr: CategoryTranslation = {
   symbols: 'Semboller',
   flags: 'Bayraklar',
   search: 'Ara',
+  custom: 'Gelenek',
 }
 export default tr

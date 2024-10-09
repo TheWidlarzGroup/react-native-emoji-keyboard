@@ -12,5 +12,6 @@ const ua: CategoryTranslation = {
   symbols: 'Символи',
   flags: 'Прапори',
   search: 'Пошук емодзі',
+  custom: 'custom',
 }
 export default ua

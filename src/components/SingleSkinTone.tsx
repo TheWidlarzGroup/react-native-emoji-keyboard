@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import type { JsonEmoji } from '../types'
+import type { UnicodeJsonEmoji } from '../types'
 
 export class SingleSkinTone extends React.Component<{
-  item: JsonEmoji
+  item: UnicodeJsonEmoji
   onPress: () => void
   emojiSize: number
   onLongPress: () => void

@@ -12,5 +12,6 @@ const cs: CategoryTranslation = {
   symbols: 'Symboly',
   flags: 'Vlajky',
   search: 'Hledat',
+  custom: 'Vlastní',
 }
 export default cs

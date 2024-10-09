@@ -12,5 +12,6 @@ const it: CategoryTranslation = {
   symbols: 'Simboli',
   flags: 'Bandiere',
   search: 'Ricerca',
+  custom: 'Personalizzate',
 }
 export default it

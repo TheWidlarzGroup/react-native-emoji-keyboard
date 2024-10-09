@@ -12,6 +12,7 @@ const se: CategoryTranslation = {
   symbols: 'Symboler',
   flags: 'Flaggor',
   search: 'Sök',
+  custom: 'Dáhpi',
 }
 
 export default se

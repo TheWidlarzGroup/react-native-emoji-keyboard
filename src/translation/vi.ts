@@ -12,5 +12,6 @@ const vi: CategoryTranslation = {
   symbols: 'Ký tự',
   flags: 'Lá cờ',
   search: 'Tìm kiếm',
+  custom: 'Phong tục',
 }
 export default vi

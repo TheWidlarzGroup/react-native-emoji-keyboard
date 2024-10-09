@@ -1,25 +1,26 @@
 import * as React from 'react'
 import { useWindowDimensions } from 'react-native'
 import {
-  type KeyboardProps,
   type ContextValues,
-  KeyboardContext,
   defaultKeyboardContext,
   defaultKeyboardValues,
   defaultTheme,
   emptyStyles,
+  KeyboardContext,
+  type KeyboardProps,
 } from './KeyboardContext'
 import { useKeyboardStore } from '../store/useKeyboardStore'
-import type { CategoryTypes, EmojisByCategory, JsonEmoji, EmojiTonesData } from '../types'
+import type { CategoryTypes, EmojisByCategory, EmojiTonesData, JsonEmoji } from '../types'
 import {
-  skinTones,
   generateToneSelectorFunnelPosition,
   generateToneSelectorPosition,
   insertAtCertainIndex,
+  skinTones,
   variantSelector,
   zeroWidthJoiner,
 } from '../utils/skinToneSelectorUtils'
 import { deepMerge } from '../utils/deepMerge'
+import { isUnicodeEmoji, isUriEmoji } from '../utils/typeguards'
 
 type ProviderProps = Partial<KeyboardProps> &
   Pick<KeyboardProps, 'onEmojiSelected'> & {
@@ -67,7 +68,7 @@ export const KeyboardProvider: React.FC<ProviderProps> = React.memo((props) => {
 
   const generateEmojiTones = React.useCallback(
     (emoji: JsonEmoji, emojiIndex: number, emojiSizes: any) => {
-      if (!emoji || !emoji.toneEnabled) return
+      if (isUriEmoji(emoji) || !emoji || !emoji.toneEnabled) return
 
       const EXTRA_SEARCH_TOP = props.enableSearchBar || props.categoryPosition === 'top' ? 50 : 0
 
@@ -141,6 +142,7 @@ export const KeyboardProvider: React.FC<ProviderProps> = React.memo((props) => {
     const emojisByCategory = props.emojisByCategory || defaultKeyboardContext.emojisByCategory
     let data = emojisByCategory.filter((category) => {
       const title = category.title as CategoryTypes
+      if (category.data?.length === 0) return false
       if (props.disabledCategories) return !props.disabledCategories.includes(title)
 
       return true
@@ -170,7 +172,7 @@ export const KeyboardProvider: React.FC<ProviderProps> = React.memo((props) => {
 
             return (
               emoji.name.toLowerCase().includes(searchPhrase.toLowerCase()) ||
-              emoji.emoji.toLowerCase().includes(searchPhrase) ||
+              (isUnicodeEmoji(emoji) && emoji.emoji.toLowerCase().includes(searchPhrase)) ||
               isInKeywords
             )
           }),

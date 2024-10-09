@@ -12,5 +12,6 @@ const ro: CategoryTranslation = {
   symbols: 'Simboluri',
   flags: 'Steaguri',
   search: 'Căutare',
+  custom: 'Personalizat',
 }
 export default ro
