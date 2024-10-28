@@ -147,6 +147,15 @@ export const EmojiCategory = React.memo(
 
     const [maxIndex, setMaxIndex] = React.useState(0)
 
+    // with InteractionManager we can show emojis after interaction is finished
+    // It helps with delay during category change animation
+    InteractionManager.runAfterInteractions(() => {
+      if (maxIndex === 0 && data.length) {
+        setMaxIndex(minimalEmojisAmountToDisplay)
+      }
+    })
+
+    // To prevent situation with zero maxIndex on next picker openings
     React.useEffect(() => {
       const task = requestAnimationFrame(() => {
         if (maxIndex === 0 && data.length) {
