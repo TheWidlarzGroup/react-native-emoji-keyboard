@@ -155,6 +155,16 @@ export const EmojiCategory = React.memo(
       }
     })
 
+    // To prevent situation with zero maxIndex on next picker openings
+    React.useEffect(() => {
+      const task = requestAnimationFrame(() => {
+        if (maxIndex === 0 && data.length) {
+          setMaxIndex(minimalEmojisAmountToDisplay)
+        }
+      })
+      return () => cancelAnimationFrame(task)
+    }, [])
+
     const onEndReached = () => {
       if (maxIndex <= data.length) {
         setMaxIndex(data.length)
