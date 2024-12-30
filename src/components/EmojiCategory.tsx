@@ -115,6 +115,7 @@ export const EmojiCategory = React.memo(
             emojiSize={emojiSize}
             onPress={handleEmojiPress}
             onLongPress={handleEmojiLongPress}
+            themeStyles={themeStyles}
             selectedEmojiStyle={
               isSelected
                 ? [
@@ -134,7 +135,7 @@ export const EmojiCategory = React.memo(
         handleEmojiPress,
         handleEmojiLongPress,
         theme.emoji.selected,
-        themeStyles.emoji.selected,
+        themeStyles,
       ],
     )
 

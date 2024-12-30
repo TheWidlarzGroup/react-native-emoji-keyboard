@@ -60,6 +60,6 @@ Set styles of the searchBar component. You can pass different styles for the con
 
 ### `emoji`
 
-Set styles of the emoji component. You can pass styles for selected state.
+Set styles of the emoji component. You can pass styles for selected state, and the general text style (e.g. for custom fonts).
 
-<ApiTable typeVal='{ selected: ViewStyle }' defaultVal='{ selected: {} }'/>
+<ApiTable typeVal='{ selected: ViewStyle, text: TextStyle }' defaultVal='{ selected: {}, text: {} }'/>

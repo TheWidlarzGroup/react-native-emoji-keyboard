@@ -31,6 +31,7 @@ export type Styles = {
   }
   emoji: {
     selected: ViewStyle
+    text: TextStyle
   }
 }
 
@@ -128,6 +129,7 @@ export const emptyStyles: Styles = {
   knob: {},
   emoji: {
     selected: {},
+    text: {},
   },
 }
 export const defaultTheme: Theme = {

@@ -9,6 +9,8 @@ import {
   type StyleProp,
 } from 'react-native'
 import type { EmojiSizes, JsonEmoji } from '../types'
+import type { Styles } from '../contexts/KeyboardContext'
+import type { RecursivePartial } from '../utils/deepMerge'
 
 type Props = {
   item: JsonEmoji
@@ -18,6 +20,7 @@ type Props = {
   onLongPress: (emoji: JsonEmoji, emojiIndex: number, emojiSizes: EmojiSizes) => void
   selectedEmojiStyle?: StyleProp<ViewStyle>
   isSelected?: boolean
+  themeStyles: RecursivePartial<Styles>
 }
 
 export const SingleEmoji = React.memo(
@@ -37,7 +40,9 @@ export const SingleEmoji = React.memo(
         style={styles.container}
       >
         <View pointerEvents={'none'} style={[styles.emojiWrapper, p.selectedEmojiStyle]}>
-          <Text style={[styles.emoji, { fontSize: p.emojiSize }]}>{p.item.emoji}</Text>
+          <Text style={[styles.emoji, { fontSize: p.emojiSize }, p.themeStyles.emoji?.text]}>
+            {p.item.emoji}
+          </Text>
         </View>
       </TouchableOpacity>
     )
